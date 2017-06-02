@@ -1,0 +1,206 @@
+ /* Document Styles */
+ 
+ @import url('https://fonts.googleapis.com/css?family=Open+Sans:400,600,700');
+ * {
+   font-family: 'Open Sans', sans-serif;
+   font-weight: 100;
+   color: #333333;
+   box-sizing: border-box;
+ }
+ 
+ body {
+   background-color: #ffffff;
+   z-index: 0;
+   counter-reset: step;
+ }
+ 
+ .center {
+   max-width: 900px;
+   margin: auto;
+   position: relative;
+ }
+ 
+ #title {
+   margin: 5px 0 10px;
+ }
+ 
+ .dark {
+   background-color: #d45311;
+   color: #FFF;
+ }
+ 
+ #header {
+   display: flex;
+   align-items: flex-start;
+ }
+ 
+ #studentInfo {
+   flex-grow: 1;
+ }
+ 
+ #studentInfo * {
+   margin: 0;
+ }
+ 
+ .button {
+   padding: 10px 20px;
+   border-radius: 10px;
+   color: #fff;
+   text-decoration: none;
+   text-align: center;
+ }
+ 
+ .info {
+   background-color: #83b632;
+ }
+ 
+ .info:before {
+   content: "i";
+   display: block;
+   width: 30px;
+   height: 30px;
+   border-radius: 15px;
+   background: #fff;
+   font-size: 16pt;
+   font-weight: 900;
+   color: #6BA539;
+   line-height: 24pt;
+   margin: 5px auto;
+ }
+ 
+ #breadcrumbs {
+   color: #fff;
+   padding: 2px 0px 5px 30px;
+   margin: 0;
+   font-size: 1.2em;
+   white-space: nowrap;
+   text-overflow: ellipsis;
+ }
+ 
+ #main {
+   background-color: #fef6e8;
+   padding: 30px;
+   position: relative;
+ }
+ 
+ .progress {
+   vertical-align: middle;
+   font-size: initial;
+   background-color: #FFFFFF;
+   border-radius: 5px;
+   text-align: left;
+   margin: 10px 0 20px;
+   border-radius: 10px;
+   height: 20px;
+ }
+ 
+ .bar {
+   display: inline-block;
+   width: calc((100% - 161px) / 5);
+   background-color: #83b632;
+   height: 20px;
+   border-radius: 10px;
+   vertical-align: top;
+ }
+ 
+ .tab {
+   display: flex;
+   flex-wrap: wrap;
+   background-color: #d45311;
+   padding: 10px;
+ }
+ 
+ .tile {
+   text-align: center;
+   text-decoration: none;
+   flex: 1;
+   min-width: calc(25% - 10px);
+   margin: 5px;
+   padding: 10px;
+   border-radius: 5px;
+   transition: .1s;
+   background: #fff;
+   position: relative;
+ }
+ 
+ .tile:hover {
+   box-shadow: 0px 0px 10px rgba(0, 0, 0, .25);
+   transform: scale(1.03);
+   transition: .1s;
+ }
+ 
+ .tile.checked:before {
+   display: block;
+   position: absolute;
+   top: -15px;
+   left: -15px;
+   margin: 0px auto;
+   content: "";
+   width: 60px;
+   height: 60px;
+   background-image: url("../images/icons/ECI_checked.png");
+   background-size: contain;
+   background-repeat: no-repeat;
+ }
+ 
+ .tile p {
+   margin: 5px;
+ }
+ 
+ .lessonTitle {
+   font-weight: 600;
+ }
+ 
+ .tabs {
+   display: flex;
+ }
+ 
+ .tab.visible {
+   display: flex;
+ }
+ 
+ .tab:not(.visible) {
+   display: none;
+ }
+ 
+ .tabName:hover {
+   cursor: pointer;
+ }
+ 
+ .tabName {
+   text-decoration: none;
+   font-size: 1.5em;
+   flex: 1;
+   background: #d45311;
+   border-radius: 10px 10px 0 0;
+   padding: 5px 10px;
+   color: #fff;
+   text-align: center;
+   margin: 0;
+ }
+ 
+ .tabName:first-child {
+   margin-right: 10px;
+ }
+ 
+ .tabName:not(.visible) {
+   background-color: #aaa;
+ }
+ 
+ @media (max-width: 700px) {
+   .tile {
+     min-width: calc(33.33% - 10px);
+   }
+ }
+ 
+ @media (max-width: 600px) {
+   .tile {
+     min-width: calc(50% - 10px);
+   }
+ }
+ 
+ @media (max-width: 400px) {
+   .tile {
+     min-width: calc(100% - 10px);
+   }
+ }
