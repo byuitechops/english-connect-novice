@@ -24,7 +24,8 @@
    margin: 5px 0 10px;
  }
  
- .dark {
+ .dark,
+ .dark a {
    background-color: #d45311;
    color: #FFF;
  }
@@ -75,6 +76,28 @@
    font-size: 1.2em;
    white-space: nowrap;
    text-overflow: ellipsis;
+ }
+ 
+ #breadcrumbs:before {
+   display: inline-block;
+   margin: 4px 5px 4px 0;
+   vertical-align: bottom;
+   background-repeat: no-repeat;
+   content: "";
+   background-image: url('../images/homeIcon.svg');
+   height: 20px;
+   width: 20px;
+ }
+ 
+ #breadcrumbs a:after {
+   content: "";
+   background-image: url('../images/arrow.svg');
+   display: inline-block;
+   margin: 5px 0 5px 10px;
+   vertical-align: bottom;
+   background-repeat: no-repeat;
+   height: 15px;
+   width: 15px;
  }
  
  #main {
@@ -151,12 +174,27 @@
    font-weight: 600;
  }
  
+ .lessonContent {
+   background-color: #fff;
+   border-radius: 5px;
+   padding: 20px;
+   width: 100%;
+ }
+ 
  .tabs {
    display: flex;
  }
  
  .tab.visible {
    display: flex;
+ }
+ 
+ .tabName.singleTab {
+   flex-grow: .5;
+ }
+ 
+ .tabName.singleTab:hover {
+   cursor: auto;
  }
  
  .tab:not(.visible) {
@@ -186,6 +224,210 @@
  
  .tabName:not(.visible) {
    background-color: #aaa;
+ }
+ /*Lessons Page Styles*/
+ 
+ .lessonButtons {
+   display: flex;
+   margin: 0 10%;
+ }
+ 
+ .lessonButtons a {
+   width: 33.33%;
+   margin: 10px;
+   text-decoration: none;
+ }
+ 
+ .lessonButtons figure {
+   border: solid;
+   margin: 0;
+ }
+ 
+ .lessonButtons figure img {
+   display: block;
+   width: 100%;
+ }
+ 
+ .lessonButtons figcaption {
+   color: #fff;
+   padding: 10px;
+   text-align: center;
+   font-size: 1.2em;
+   text-transform: uppercase;
+ }
+ 
+ figcaption.practice {
+   background: #d45311;
+ }
+ 
+ figcaption.extra-mile {
+   background: #139fa5;
+ }
+ 
+ figcaption.stories {
+   background: #006184;
+ }
+ 
+ .lessonBanner {
+   background-image: url('../images/banner.png');
+   background-size: cover;
+   height: 200px;
+   position: relative;
+ }
+ 
+ .lessonBanner h2 {
+   position: absolute;
+   bottom: 10px;
+   margin: 0;
+   width: 100%;
+   padding: 5px 20px 8px;
+   background-color: rgba(255, 255, 255, .8);
+ }
+ 
+ .lessonBanner h2 .level {
+   font-weight: 600;
+ }
+ /*Application page*/
+ 
+ .stepsContainer {
+   counter-reset: step;
+   position: relative;
+ }
+ 
+ .step {
+   display: block;
+   text-decoration: none;
+   margin: 10px 0;
+   margin: 10px 10px 10px 40px;
+ }
+ 
+ .step-header {
+   display: inline-block;
+   font-size: 1.2em;
+   text-decoration: none;
+   padding: 5px 10px;
+   border-radius: 5px;
+   vertical-align: middle;
+   margin: 0;
+ }
+ 
+ .step-header.button {
+   background: #f68d2e;
+   color: #fff;
+ }
+ 
+ .step .self-check:after {}
+ 
+ .step .vocabulary:after {}
+ 
+ .step:before {
+   vertical-align: middle;
+   position: absolute;
+   left: 0;
+   color: #fff;
+   display: inline-block;
+   background: #d45311;
+   counter-increment: step;
+   content: counter(step) " ";
+   font-size: 20px;
+   line-height: 10px;
+   width: 10px;
+   height: 10px;
+   border-radius: 15px;
+   padding: 10px;
+   margin-top: 3px;
+ }
+ 
+ #pracNav {
+   list-style-type: none;
+   display: -webkit-flex;
+   display: flex;
+   align-items: strech;
+   margin: 10px 0 0;
+   padding: 0;
+   counter-reset: options;
+   overflow: hidden;
+   height: 40px;
+   width: 100%;
+ }
+ 
+ #pracNav a {
+   text-decoration: none;
+   display: block;
+   margin: 0;
+   width: 100%;
+   height: 100%;
+ }
+ 
+ #pracNav li {
+   -webkit-flex-grow: 1;
+   flex-grow: 1;
+   position: relative;
+   background-color: #d45311;
+ }
+ 
+ #pracNav a:before {
+   color: #fff;
+   counter-increment: options;
+   content: counter(options) " ";
+   position: absolute;
+   top: 25%;
+   left: 55%;
+ }
+ 
+ #pracNav a:after {
+   display: inline-block;
+   vertical-align: middle;
+   line-height: 0;
+   position: absolute;
+   left: 100%;
+   z-index: 1;
+ }
+ 
+ #pracNav a:after {
+   content: url(../images/pointer.svg);
+ }
+ 
+ #pracNav li:first-of-type {
+   border-radius: 5px 0px 0px 5px;
+ }
+ 
+ #pracNav li:first-of-type a:before,
+ #pracNav li:last-of-type a:before {
+   left: 45%;
+ }
+ 
+ #pracNav li:last-of-type {
+   border-radius: 0px 5px 5px 0px;
+ }
+ 
+ #pracNav li:last-of-type a:after {
+   content: none;
+ }
+ 
+ #pracNav li:only-child {
+   border-radius: 5px;
+ }
+ 
+ .linkBar {
+   margin-top: 30px;
+   display: flex;
+   background-color: #f68d2e;
+   border-radius: 5px;
+ }
+ 
+ .linkBar a {
+   color: #fff;
+   text-decoration: none;
+   flex-grow: 1;
+   padding: 10px 20px;
+   text-align: center;
+   transition: .3s;
+   border-radius: 5px;
+ }
+ 
+ .linkBar a:hover {
+   background-color: #d45311;
  }
  
  @media (max-width: 700px) {
