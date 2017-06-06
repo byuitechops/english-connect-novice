@@ -133,6 +133,14 @@
    padding: 10px;
  }
  
+ .tab:nth-child(2) {
+   border-radius: 0 10px 10px;
+ }
+ 
+ .tabs .tab {
+   border-radius: 0 0 10px 10px;
+ }
+ 
  .tile {
    text-align: center;
    text-decoration: none;
@@ -181,7 +189,7 @@
    width: 100%;
  }
  
- .tabs {
+ .tabNames {
    display: flex;
  }
  
@@ -298,7 +306,7 @@
    display: block;
    text-decoration: none;
    margin: 10px 0;
-   margin: 10px 10px 10px 40px;
+   margin: 15px 15px 15px 45px;
  }
  
  .step-header {
@@ -307,7 +315,7 @@
    text-decoration: none;
    padding: 5px 10px;
    border-radius: 5px;
-   vertical-align: middle;
+   vertical-align: bottom;
    margin: 0;
  }
  
@@ -330,12 +338,19 @@
    counter-increment: step;
    content: counter(step) " ";
    font-size: 20px;
-   line-height: 10px;
-   width: 10px;
-   height: 10px;
-   border-radius: 15px;
-   padding: 10px;
-   margin-top: 3px;
+   line-height: 13px;
+   width: 12px;
+   height: 12px;
+   border-radius: 18px;
+   padding: 12px 11px 12px 13px;
+ }
+ 
+ .step.extra-mile:before {
+   background-color: #139fa5;
+ }
+ 
+ .step.stories:before {
+   background-color: #006184;
  }
  
  #pracNav {
@@ -363,7 +378,14 @@
    -webkit-flex-grow: 1;
    flex-grow: 1;
    position: relative;
+ }
+ 
+ .practice #pracNav li {
    background-color: #d45311;
+ }
+ 
+ .extra-mile #pracNav li {
+   background-color: #139fa5;
  }
  
  #pracNav a:before {
@@ -373,6 +395,18 @@
    position: absolute;
    top: 25%;
    left: 55%;
+ }
+ 
+ #pracNav a.checked:before {
+   background-image: url(../images/icons/ECI_checked.png);
+   width: 40px;
+   height: 40px;
+   display: block;
+   position: absolute;
+   background-size: contain;
+   content: "";
+   top: 1px;
+   left: 40%;
  }
  
  #pracNav a:after {
@@ -395,6 +429,11 @@
  #pracNav li:first-of-type a:before,
  #pracNav li:last-of-type a:before {
    left: 45%;
+ }
+ 
+ #pracNav li:first-of-type a.checked:before,
+ #pracNav li:last-of-type a.checked:before {
+   left: 35%;
  }
  
  #pracNav li:last-of-type {
@@ -428,6 +467,45 @@
  
  .linkBar a:hover {
    background-color: #d45311;
+ }
+ /*Stories Styles*/
+ 
+ .step.stories ul {
+   list-style: none;
+   display: flex;
+   flex-wrap: wrap;
+   padding: 0;
+   margin: 0;
+ }
+ 
+ .step.stories li {
+   flex: 1;
+   text-indent: -1em;
+   min-width: 33.33%;
+   padding-left: 1em;
+ }
+ 
+ .step.stories li:before {
+   content: "";
+   display: inline-block;
+   background-image: url(../images/bullet.svg);
+   width: 10px;
+   height: 10px;
+   vertical-align: middle;
+   margin: 0 5px 5px 0;
+   background-size: contain;
+   color: #006184;
+ }
+ 
+ iframe {
+   display: block;
+   width: calc(100% - 6px);
+   max-width: 900px;
+   border: solid #A2AAAD 3px;
+   border-radius: 5px;
+   margin: 20px auto;
+   height: 400px;
+   transition: height .3s;
  }
  
  @media (max-width: 700px) {
