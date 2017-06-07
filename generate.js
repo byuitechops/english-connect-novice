@@ -10,7 +10,7 @@ var fs = require('fs'),
   template, location;
 
 if (typeof (process.argv[2]) == 'undefined') {
-  location = 'generatedPages'
+  location = 'docs'
 } else {
   location = 'devPages'
 }
