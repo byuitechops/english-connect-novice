@@ -1,0 +1,24 @@
+{
+  "name": "english-connect-novice",
+  "version": "1.0.0",
+  "description": "This package includes the script to generate the pages for EnglishConnect Novice",
+  "main": "generate.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "generate": "node generate.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/byuitechops/english-connect-novice.git"
+  },
+  "author": "Ben Harker",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/byuitechops/english-connect-novice/issues"
+  },
+  "homepage": "https://github.com/byuitechops/english-connect-novice#readme",
+  "dependencies": {
+    "d3-dsv": "^1.0.5",
+    "handlebars": "^4.0.10"
+  }
+}
