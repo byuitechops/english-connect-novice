@@ -60,7 +60,7 @@ handlebars.registerHelper('generateTab1', function () {
 
 handlebars.registerHelper('generateTab2', function () {
   var html = "";
-  var lessonNumber = 0;
+  var lessonNumber = 24;
   console.log(structure.lessons.slice(24))
   structure.lessons.slice(24).forEach(function (lesson) {
     lessonNumber += 1;
@@ -74,6 +74,7 @@ handlebars.registerHelper('generateTab2', function () {
 function generatePage(lesson, practice) {
   var context = {
     "lesson": lesson,
+    "lessonNumber": structure.lessons.indexOf(lesson) + 1,
     "practice": practice,
     "lessonsmall": small(lesson),
     "practicesmall": small(practice)
