@@ -72,9 +72,16 @@ handlebars.registerHelper('generateTab2', function () {
 
 
 function generatePage(lesson, practice) {
+  var speakUp = 1;
+  var lessonNumber = structure.lessons.indexOf(lesson) + 1;
+  if (lessonNumber > 24) {
+    speakUp = 2;
+  }
+
   var context = {
     "lesson": lesson,
-    "lessonNumber": structure.lessons.indexOf(lesson) + 1,
+    "lessonNumber": lessonNumber,
+    "speakUp": speakUp,
     "practice": practice,
     "lessonsmall": small(lesson),
     "practicesmall": small(practice)
