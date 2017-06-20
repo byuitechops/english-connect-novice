@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="utf-8">
+  <title>EnglishConnect | Home</title>
+  <link rel="stylesheet" type="text/css" href="css/styles2.css">
+  <link rel="icon" type="image/png" href="images/PathwayLogoFavicon.png">
+</head>
+
+<body id="home">
+  <div class="center">
+    <h1 id="title">EnglishConnect | Novice</h1>
+    <div id="banner" class="dark">
+      <h2 id="breadcrumbs"><a href="index.html">Home</a></h2>
+    </div>
+    <div id='main' class="remove">
+      <div id='header'>
+        <div id="studentInfo">
+          <h3>USER:</h3>
+          <p id='name'>Juan Antonio Escobar Zamorres</p>
+          <p id='hometown'>Antofagasta, Chile</p>
+        </div>
+        <a class="button info" href="course_info.html">How to take this course</a>
+      </div>
+      <h2>Choose any lesson below:</h2>
+      <div id='listening' class="progress">
+        <div class="bar"></div>
+      </div>
+      <div class="tabNames">
+        <a class="tabName visible singleTab" onclick='changeTab()'>Novice Level 2</a>
+      </div>
+      <div class="tabs">
+        <div class="tab visible">
+          {{generateTab2}}
+        </div>
+      </div>
+    </div>
+    <div id="overlay" class="hidden"></div>
+    <p>
+      <script src="js/scripts.js" type="text/javascript"></script>
+    </p>
+  </div>
+</body>
+
+</html>
